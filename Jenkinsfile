@@ -1,6 +1,8 @@
 pipeline {
     agent { label 'built-in' }
-    pollSCM('* * * * *')
+    triggers {
+        pollSCM('* * * * *')
+    }
     stages {
         stage("Compile") {
             steps {
